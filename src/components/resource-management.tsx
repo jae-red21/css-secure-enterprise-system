@@ -82,7 +82,6 @@ const mockAccessLogs: { [key: string]: AccessLog[] } = {
 }
 
 export function ResourceManagement() {
-  const [selectedItem, setSelectedItem] = useState<string | null>(null)
   const [accessLogs, setAccessLogs] = useState<AccessLog[]>([])
   const [userId, setUserId] = useState("")
   const [permission, setPermission] = useState<"Read" | "Write" | "Manage">("Read")
@@ -142,7 +141,7 @@ export function ResourceManagement() {
                   <DialogTrigger asChild>
                     <Button
                       onClick={() => {
-                        setSelectedItem(item.id)
+
                         loadAccessLogs(item.id)
                       }}
                     >
